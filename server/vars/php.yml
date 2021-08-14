@@ -5,7 +5,7 @@ php_upload_max_filesize: "256M"
 php_session_cookie_lifetime: "20000"
 php_session_gc_maxlifetime: "20000"
 php_packages:
-  - php
+  - php7.3
   - php7.3-cli
   - php7.3-common
   - php7.3-gd
