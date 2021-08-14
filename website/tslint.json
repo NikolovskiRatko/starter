@@ -1,0 +1,22 @@
+{
+  "extends": "tslint-config-airbnb",
+  "rules": {
+    "import-name": false,
+    "no-increment-decrement": false,
+    "object-literal-shorthand": false,
+    "variable-name": false,
+    "trailing-comma": [
+      true,
+      {
+        "singleline": "never",
+        "multiline": {
+          "objects": "never",
+          "arrays": "always",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        }
+      }
+    ],
+    "max-line-length": [true, 120]
+  }
+}

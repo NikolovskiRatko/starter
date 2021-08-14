@@ -1,0 +1,15 @@
+---
+- name: "Install other dependencies."
+  apt: "name={{ item }} state=present"
+  with_items:
+    - git
+    - curl
+    - unzip
+    - sendmail
+    - libpcre3-dev
+    - libapache2-mod-php7.3
+
+- name: "ensure SSH key is generated"
+  command: ssh-keygen -t rsa -f /root/.ssh/id_rsa -N ''
+  args:
+    creates: /root/.ssh/id_rsa

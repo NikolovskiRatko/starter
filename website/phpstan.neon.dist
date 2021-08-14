@@ -1,0 +1,12 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+parameters:
+    level: MAX
+    paths:
+        - app
+    excludes_analyse:
+        - %rootDir%/../../../app/Http/Controllers/Auth/AuthController.php
+        - %rootDir%/../../../app/Providers/*
+        - %rootDir%/../../../app/Util/Translations/*
+    ignoreErrors:
+        - '#Call to protected method increment\(\) of class Illuminate\\Database\\Eloquent\\Model#'

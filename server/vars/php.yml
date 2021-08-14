@@ -1,0 +1,20 @@
+---
+php_memory_limit: "128M"
+php_max_execution_time: "90"
+php_upload_max_filesize: "256M"
+php_session_cookie_lifetime: "20000"
+php_session_gc_maxlifetime: "20000"
+php_packages:
+  - php
+  - php7.3-cli
+  - php7.3-common
+  - php7.3-gd
+  - php7.3-mbstring
+  - php7.3-pdo
+  - php7.3-apcu
+  - php7.3-xml
+  - php7.3-opcache
+  - php7.3-json
+  - php7.3-mysql
+  - php7.3-curl
+  - php7.3-intl

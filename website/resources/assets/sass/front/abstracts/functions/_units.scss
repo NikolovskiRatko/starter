@@ -1,0 +1,11 @@
+/*
+ * Units functions
+ */
+
+
+/*
+ * Function for converting a px based font-size to rem.
+ */
+@function calculateRem($size) {
+  @return $size / $font-size-pixel-base * 1rem;
+}

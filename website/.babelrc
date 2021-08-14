@@ -1,0 +1,24 @@
+{
+  "ignore": [
+    "/\\/core-js/"
+  ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "debug": false,
+        "modules": false,
+        "forceAllTransforms": true,
+        "corejs": "2",
+        "useBuiltIns": "usage",
+        "shippedProposals": true
+      }
+    ]
+  ],
+  "overrides": [
+    {
+      "test": "./node_modules",
+      "sourceType": "unambiguous"
+    }
+  ]
+}

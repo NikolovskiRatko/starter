@@ -1,0 +1,33 @@
+.main__container > img{
+  padding: 3rem 0;
+}
+
+.tech__container {
+  display: grid;
+  //align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.tech__container__image {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.tech__image > img {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+.tech__image__long {
+  padding: 3rem 0;
+}
+
+.tech__image__long > img {
+  width: 58%;
+  height: auto;
+}

@@ -1,0 +1,36 @@
+/*
+ * Login modal
+ */
+.sk-modal__login-type {}
+
+.sk-modal__login-type__reset {
+  margin-top: 1rem;
+  text-align: center;
+  a {
+    color: $pink;
+    &:hover {
+      color: $pink-3;
+    }
+  }
+}
+
+/*
+ * Register modal
+ */
+.sk-modal__register-type {}
+
+/*
+ * Reset password link modal
+ */
+.sk-modal__reset-password-link-type {}
+
+.sk-modal__reset-password-link-type__login {
+  margin-top: 1rem;
+  text-align: center;
+  a {
+    color: $pink;
+    &:hover {
+      color: $pink-3;
+    }
+  }
+}

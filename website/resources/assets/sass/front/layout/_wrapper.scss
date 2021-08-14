@@ -1,0 +1,98 @@
+/*! purgecss start ignore */
+.main {
+  &--fixed-header {
+    padding-top: calculateRem(89px);
+  }
+}
+
+.main-wrapper {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+
+  background-color: $light-bg;
+
+  //overflow-x: hidden;
+  //overflow-y: auto;
+
+  &--nav-open {
+    overflow-y: hidden;
+  }
+
+  &:after {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 0;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: $white;
+    z-index: 1000;
+
+    transition: height .2s linear;
+  }
+
+  @include media-breakpoint-up(lg) {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.main-wrapper--dimmed {
+  &:after {
+    opacity: 0.95;
+    visibility: visible;
+    height: 100%;
+  }
+}
+
+.back-to-top-btn {
+  position: fixed;
+  background-color: $dalia-dark-bg;
+  border-radius: $border-radius-sm;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  width: calculateRem(30px);
+  height: calculateRem(30px);
+  bottom: calculateRem(36px);
+  right: calculateRem(16px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: rotate(-90deg) translateX(0);
+  transition: transform #{$transition-fast},
+  opacity #{$transition-fast};
+
+  svg {
+    width: calculateRem(12px);
+    height: calculateRem(12px);
+  }
+
+  @include hover() {
+    transform: rotate(-90deg) translateX(5px);
+  }
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: calculateRem(40px);
+    height: calculateRem(40px);
+    bottom: calculateRem(40px);
+    right: calculateRem(48px);
+    svg {
+      width: calculateRem(12px);
+      height: calculateRem(12px);
+    }
+  }
+}
+/*! purgecss end ignore */

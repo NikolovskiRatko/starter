@@ -1,0 +1,38 @@
+.eltdf-counter-holder {
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: opacity .2s ease-in;
+  -moz-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+  text-align: center
+}
+
+.eltdf-counter-holder .eltdf-counter-inner {
+  display: inline-block
+}
+
+.eltdf-counter-holder .eltdf-counter {
+  color: #faf3ed;
+  font-family: $font-secondary;
+  font-size: 195px;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%)
+}
+
+.eltdf-counter-holder .eltdf-counter-title {
+  margin: 26px 0 0;
+  position: relative;
+  z-index: 1
+}
+
+.eltdf-counter-holder .eltdf-counter-text {
+  margin: 5px 0 0;
+  position: relative;
+  z-index: 1
+}

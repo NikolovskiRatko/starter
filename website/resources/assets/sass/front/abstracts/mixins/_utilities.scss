@@ -1,0 +1,63 @@
+@mixin reset-ul() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin full-absolute-positioned() {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+@mixin orientation($direction) {
+  $orientation-landscape: "(orientation:landscape)";
+  $orientation-portrait: "(orientation:portrait)";
+
+  @if $direction == landscape {
+    @media #{$orientation-landscape} { @content; }
+  }
+  @if $direction == portrait {
+    @media #{$orientation-portrait} { @content; }
+  }
+}
+
+@mixin ie-media-query($ie10and11:true,$ie12edge:false) {
+  @if $ie12edge and $ie10and11 {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      @supports (-ms-accelerator:true) {
+        @content;
+      }
+    }
+  }
+  @if $ie10and11 {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      @content;
+    }
+  }
+}
+
+/*
+ * box-shadow() is bootstrap native which requires $enable-shadows to be TRUE
+ * this one works even though $enable-shadows is not TRUE
+ */
+@mixin box-shadow-force($shadow...) {
+    $result: ();
+    @if (length($shadow) == 1) {
+      // We can pass `@include box-shadow(none);`
+      $result: $shadow;
+    } @else {
+      // Filter to avoid invalid properties for example `box-shadow: none, 1px 1px black;`
+      @for $i from 1 through length($shadow) {
+        @if nth($shadow, $i) != "none" {
+          $result: append($result, nth($shadow, $i), "comma");
+        }
+      }
+    }
+    @if (length($result) > 0) {
+      box-shadow: $result;
+    }
+}

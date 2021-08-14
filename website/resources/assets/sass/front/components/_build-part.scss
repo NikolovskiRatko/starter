@@ -1,0 +1,30 @@
+.main__body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  //background: linear-gradient(to bottom, #fff, #f8f8f8);
+}
+
+.main__container {
+  padding: 3rem 0;
+  display: flex;
+  //flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.list__container {
+  margin: 0 10rem;
+}
+
+.main__container > div > ul > li {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+#about__text {
+  display: flex;
+  justify-content: center;
+}

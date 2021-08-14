@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Applications\Common\BLL;
+
+use Illuminate\Http\Request;
+
+/**
+ * Interface {{modelName}}BLLInterface
+ * @package App\Applications\Common
+ */
+
+interface {{modelName}}BLLInterface
+{
+    /**
+     * @return array
+     */
+    public function getAll{{modelNamePlural}}();
+
+    /**
+     * @param Request $request
+     *
+     * @return array
+     */
+    public function order{{modelNamePlural}}($request);
+
+    /**
+     * @param Request $request
+     * @param integer $id
+     *
+     * @return integer
+     */
+    public function edit{{modelName}}($request, $id);
+
+    /**
+     * @param Request $request
+     *
+     * @return integer
+     */
+    public function new{{modelName}}($request);
+}

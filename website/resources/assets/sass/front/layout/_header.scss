@@ -1,0 +1,301 @@
+/*! purgecss start ignore */
+.main-header {
+  //border-bottom: 1px solid rgba(234, 234, 234, 0.5);
+  background: #FFF;
+  z-index: 1600;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calculateRem(89px);
+
+  &--fixed {
+    position: fixed;
+    animation-name: revealMenu;
+    animation-duration: 1s;
+    box-shadow: $freja-box-shadow;
+  }
+}
+
+.main-header__container {
+  padding-left: 0;
+  padding-right: 0;
+
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.main-header__column {}
+
+.main-header__left-column {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+  @include media-breakpoint-up(lg) {
+    margin-right: 0;
+  }
+}
+
+.main-header__list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  flex-direction: column;
+  @include media-breakpoint-up(lg) {
+    flex-direction: row;
+  }
+}
+
+.main-header__nav {
+  display: none;
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+}
+
+.main-header__nav--mobile {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  padding-top: 0;
+  max-height: 0;
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px;
+    padding-top: 3rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.main-header__row--mobile-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.main-header__nav--mobile {
+  .main-header__nav__item {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+  }
+  &--open .main-header__nav__item {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    //transition: all .2s cubic-bezier(.79,.07,.57,.97);
+    transition: all .2s cubic-bezier(.79,.07,.57,.97);
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        transition-delay: .05s * $i + 0.15s;
+      }
+    }
+  }
+}
+
+.main-headerr__nav--mobile__book-now {
+  padding: 2rem 0;
+  text-align: center;
+  .fr-btn.fr-btn-small {
+    font-size: 20px;
+    font-weight: 600;
+    padding: calculateRem(12px) calculateRem(46px);
+  }
+  .fr-btn.fr-btn-discontinuous {
+    .fr-disc-btn-right,
+    .fr-blob-btn-left {
+      width: 3px;
+    }
+    .fr-disc-btn-top-left,
+    .fr-disc-btn-top-right,
+    .fr-disc-btn-bottom-right,
+    .fr-disc-btn-bottom-left {
+      height: 3px;
+    }
+  }
+}
+
+.main-header__row {
+  width: 100%;
+}
+
+.main-header__nav__item {
+  height: 100%;
+  align-self: stretch;
+  &:hover,
+  &.active{
+    > a {
+      .hover-bg{
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &.open, &:hover, &.active {
+    > a {
+      color: $freja-default-light;
+      text-decoration: none;
+    }
+  }
+}
+
+.main-header__nav__link {
+  display: block;
+  align-items: center;
+  white-space: normal;
+  border-radius: 4px;
+  //color: $white;
+  color: $freja-text;
+  font-size: calculateRem(24px);
+  font-style: normal;
+  font-weight: 600;
+  padding: 1.5rem 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    font-size: calculateRem(12px);
+    padding: 0.5rem 1rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    color: $freja-text;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: inline-flex;
+    text-align: left;
+  }
+
+  .hover-bg {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 14px;
+      bottom: 0;
+      left: 0;
+      background-color: $freja-default-light-faded;
+      z-index: 1;
+      -webkit-transition: width .5s ease-in-out;
+      transition: width .5s ease-in-out;
+      width: 0;
+    }
+    .menu-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:active {
+      background-color: transparent;
+      text-decoration: none;
+      color: #CCC;
+    }
+
+    &.active {
+      background-color: transparent;
+    }
+  }
+}
+
+.main-header__logo {
+  margin: 0 0 0 1rem;
+  position: relative;
+  z-index: 1;
+  a {
+    display: block;
+  }
+  img {
+    transition: all 0.3s ease;
+    position: relative;
+    top: 0;
+    max-height: 3rem;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 0 0 .2rem 0;
+  }
+}
+
+.main-header__trigger-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: .5rem;
+  position: relative;
+  path {
+    fill: $freja-default-light;
+    transition: transform .2s linear;
+  }
+  svg {
+    overflow: visible;
+    &:focus {
+      outline: none;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.main-header__trigger-button--menu {
+  margin: 0 0 0 1rem;
+  .sk-icon--close {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-12px, -14px) scale(0);
+    transition: transform .2s linear;
+  }
+  &--open {
+    .path-0 {
+      transform: translate(-5px,-5px);
+    }
+    .path-1 {
+      transform: translate(5px, -5px);
+    }
+    .path-2 {
+      transform: translate(-5px, 5px);
+    }
+    .path-3 {
+      transform: translate(5px, 5px);
+    }
+    .sk-icon--close {
+      transform: translate(-12px, -14px) scale(0.7);
+      .path-0 {
+        transform: translate(0, 0);
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+@keyframes revealMenu {
+  0% {
+    transform: translateY(-150px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+/*! purgecss end ignore */

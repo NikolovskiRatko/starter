@@ -1,0 +1,46 @@
+.fr-single-image-holder {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  &.has-border {
+    &:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: calc(100% - 2px);
+      height: 100%;
+      border: 1px solid #d0936a;
+      z-index: 1;
+      transform: translate(10px,-10px);
+      transition: transform .3s ease-out .15s,opacity .3s ease .15s
+    }
+    &.has-link {
+      &:hover {
+        &:after {
+          transform: translate(20px,-20px);
+        }
+      }
+    }
+  }
+  img {
+    position: relative;
+    display: block;
+    z-index: 2;
+  }
+}
+
+.fr-zoom-out-image-holder {
+  overflow: hidden;
+  img {
+    transform: scale(1.03) translateZ(0);
+    transition: transform 1s ease;
+    display: block;
+  }
+  &:hover {
+    img {
+      transform: scale(1) translateZ(0)
+    }
+  }
+}

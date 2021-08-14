@@ -1,0 +1,11 @@
+---
+mysql_root_password: 123456Pasvord~
+mysql_databases:
+  - name: starter
+    encoding: latin1
+    collation: latin1_general_ci
+mysql_users:
+  - name: starter
+    host: "%"
+    password: 123456Pasvord~
+    priv: "starter.*:ALL"

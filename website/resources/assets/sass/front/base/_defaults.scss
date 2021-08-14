@@ -1,0 +1,102 @@
+html {
+  direction: $dir;
+  //overflow-x: hidden;
+  box-shadow: none !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+html.safari:not(.no-safari-overflow-x-fix) .body {
+  overflow-x: hidden;
+}
+
+body {
+  font-weight: 300;
+  font-family: $font-primary;
+  font-size: $body-font-size + 0px;
+  line-height: $body-line-height + 0px;
+  color: $color-font-default;
+  -webkit-font-smoothing: antialiased;
+  background-color: $light-bg;
+  margin: 0;
+  height: 100%;
+
+  &.modal-open,
+  &.nav-menu-open {
+    overflow: hidden;
+  }
+
+  a {
+    outline: none !important;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+//::selection {
+  //background: #d0936a;
+  //color: #fff
+//}
+
+//::-moz-selection {
+//  background: #d0936a;
+//  color: #fff
+//}
+
+a,p a {
+  color: #2d2d2d;
+  text-decoration: none;
+  -webkit-transition: color .2s ease-out;
+  -moz-transition: color .2s ease-out;
+  transition: color .2s ease-out;
+}
+
+h1,h2,h3,h4,h5 {
+  font-weight: 500;
+  margin: 20px 0;
+  font-family: $font-secondary;
+  color: #2d2d2d
+}
+
+h1 {
+  font-size: 92px;
+  line-height: 1.053695652173913em
+}
+
+h2 {
+  font-size: 60px;
+  line-height: 1em
+}
+
+h3 {
+  font-size: 42px;
+  line-height: 1.071428571428571em
+}
+
+h4 {
+  font-size: 30px;
+  line-height: 1.166666666666667em
+}
+
+h5 {
+  font-size: 22px;
+  line-height: 1.181818181818182em
+}
+
+h6 {
+  font-size: 11px;
+  line-height: 2.363636363636364em;
+  letter-spacing: .1em
+}
+
+
+/* Responsive */
+//TODO: Implement bootstrap scaling font size method
+//@media (max-width: 575px) {
+//
+//  body {
+//    font-size: 13px;
+//  }
+//
+//}

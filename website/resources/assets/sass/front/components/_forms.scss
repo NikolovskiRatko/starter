@@ -1,0 +1,400 @@
+$input-font-size:                         $font-size-pixel-base;
+
+$input-padding-y:         .375rem !default;
+$input-padding-x:         .75rem !default;
+
+$form-feedback-invalid-color: $color-danger;
+$form-feedback-font-size: 80%;
+
+$form-feedback-font-size: .25rem !default;
+$form-feedback-margin-top: .25rem !default;
+
+$input-font-family: $font-secondary;
+$input-font-weight: $font-weight-normal;
+$input-line-height: 1.5;
+$input-bg:                              $white !default;
+$input-focus-bg:                        $input-bg !default;
+$input-focus-border-color:              grey !default;
+
+$input-placeholder-color:               $grey-3 !default;
+
+
+$input-label-font-size:                   $input-font-size;
+$input-label-font-size-focused:           $input-font-size / 1.5;
+
+$transition-fast: '0.1s ease-in-out';
+$transition-standard: '0.2s ease-in-out';
+$transition-slow: '0.3s ease-in-out';
+
+$transition-fast-duration: '0.1s';
+$transition-standard-duration: '0.2s';
+$transition-slow-duration: '0.3s';
+
+$input-label-color:                       #9e9e9e;
+$input-label-color-dark-bg:               #c5c5c5;
+
+$input-label-font-size:                   $input-font-size;
+$input-label-font-size-focused:           $input-font-size / 1.5;
+
+$input-color:                           $dark-grey-1;
+$input-color-dark-bg:                   $white;
+$input-border-color:                    $grey-4;
+$input-border-width:                    1px;
+
+//Custom select dropdown
+$input-custom-select-padding-y:           0.625rem;
+$input-custom-select-padding-x:           0.625rem;
+$input-custom-select-item-font-size:      0.8215rem;
+
+$input-custom-select-box-shadow:          0 0 20px rgba($true-black, 0.15);
+
+$input-btn-focus-width:                   .2rem;
+
+
+/*! purgecss start ignore */
+/*
+ * Bootstrap input
+ */
+.form-group {
+  .help-block {
+    font-size: calculateRem(13px);
+    color: $form-feedback-invalid-color;
+  }
+}
+.form-control {
+  font-family: $font-primary;
+}
+
+/*
+ * Vue formulate
+ */
+.formulate-input {
+
+}
+
+.formulate-input-wrapper {
+  @at-root .formulate-input:not(.formulate-input--checkbox):not(.formulate-input--radio) & {
+    position: relative;
+    padding-top: 1rem;
+  }
+}
+
+.formulate-input-label {
+  //padding: $input-padding-y $input-padding-x;
+  cursor: pointer;
+  &--floating-label {
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    left: $input-padding-x;
+    font-size: $input-label-font-size;
+    transition: top #{$transition-standard},
+                font-size #{$transition-standard};
+    &--has-value {
+      top: 0;
+      font-size: $input-label-font-size-focused;
+    }
+  }
+
+  @at-root .formulate-input--dark-bg & {
+    color: $input-label-color-dark-bg;
+  }
+  @at-root .formulate-input--light-bg & {
+    color: $input-label-color;
+  }
+
+  @at-root .formulate-input--has-errors & {
+    color: $form-feedback-invalid-color;
+  }
+}
+
+.formulate-input-help {
+  @include sr-only();
+}
+
+.formulate-input-errors {
+  @include reset-ul();
+  font-size: $form-feedback-font-size;
+  margin-top: $form-feedback-margin-top;
+}
+
+.formulate-input-error {
+  padding: $input-padding-y;
+  color: $form-feedback-invalid-color;
+}
+
+.formulate-input-element {
+
+  position: relative;
+  z-index: 2;
+
+  input {
+    &:not([type="checkbox"]):not([type="radio"]) {
+      display: block;
+      //height: $input-height;
+      padding: $input-padding-y $input-padding-x;
+      font-family: $input-font-family;
+      @include font-size($input-font-size);
+      font-size: $input-font-size;
+      font-weight: $input-font-weight;
+      line-height: $input-line-height;
+      color: $input-color;
+      background-color: $input-bg;
+      background-clip: padding-box;
+      border: none;
+      border-bottom: $input-border-width solid $input-border-color;
+
+      @at-root .formulate-input--dark-bg & {
+        color: $input-color-dark-bg;
+      }
+
+      @at-root .formulate-input--light-bg & {
+        color: $input-color;
+      }
+
+      @at-root .formulate-input--has-errors & {
+        border-bottom-color: $form-feedback-invalid-color;
+      }
+
+      &[type="text"],
+      &[type="email"],
+      &[type="password"] {
+        width: 100%;
+      }
+
+      @include autofill-styles($pink);
+
+      // Unstyle the caret on `<select>`s in IE10+.
+      &::-ms-expand {
+        background-color: transparent;
+        border: 0;
+      }
+
+      // Remove select outline from select box in FF
+      &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 $input-color;
+      }
+
+      // Customize the `:focus` state to imitate native WebKit styles.
+      &:focus {
+        //color: $input-focus-color;
+        background-color: $input-focus-bg;
+        border-color: $input-focus-border-color;
+        outline: 0;
+      }
+
+      // Placeholder
+      &::placeholder {
+        color: $input-placeholder-color;
+        // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+        //opacity: 1;
+        opacity: 0;
+      }
+
+    }
+  }
+
+}
+
+
+/*
+ * Checkboxes and radios
+ */
+.formulate-input--checkbox {
+  //&:hover {
+  //  &:not(.formulate-input-group-item) > div > div {
+  //    input:not(:checked) + .formulate-input-element-decorator:before {
+  //      transition: none;
+  //      transform: scale(1);
+  //      visibility: visible;
+  //      opacity: 0.5;
+  //      background-position: 200% 0;
+  //    }
+  //  }
+  //}
+  .formulate-input-label {
+    cursor: pointer;
+  }
+  .formulate-input-wrapper {
+    padding: $input-padding-y $input-padding-x;
+  }
+  .formulate-input-group .formulate-input-wrapper {
+    padding: 0 $input-padding-x;
+  }
+}
+
+.formulate-input-element--checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: $input-padding-x;
+
+  input {
+    display: none;
+    &:checked + .formulate-input-element-decorator:before {
+      visibility: visible;
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @at-root .formulate-input--dark-bg & {
+    input:checked + .formulate-input-element-decorator:before {
+      background-position: 50% 0;
+    }
+  }
+
+  @at-root .formulate-input--light-bg & {
+    input:checked + .formulate-input-element-decorator:before {
+      background-position: 0 0;
+    }
+  }
+
+  .formulate-input-element-decorator {
+    //TODO: Create fallback to PNG
+    position: relative;
+    display: inline-block;
+    border: 1.5px solid $freja-dark-cream;
+    width: 1rem;
+    height: 1rem;
+    margin-bottom: 0;
+    &:before {
+      content: '';
+      @include full-absolute-positioned();
+      background-image: url(#{$dali-image-folder}/icons/forms/checkmark.svg);
+      background-size: 300% 100%;
+      background-repeat: no-repeat;
+      transform: scale(2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity #{$transition-fast},
+                  transform #{$transition-fast};
+    }
+  }
+
+}
+
+/*
+ * Custom dropdown
+ */
+.formulate-input--customselect {
+
+  cursor: pointer;
+
+  &.formulate-input--dark-bg &__dropdown {
+    background-color: $dark-grey-1;
+    &-item {
+      color: $white;
+      &:hover {
+        background-color: $true-black;
+      }
+    }
+  }
+
+  &.formulate-input--light-bg &__dropdown {
+    background-color: $white;
+    color: $dark-grey-1;
+    @include box-shadow-force($input-custom-select-box-shadow);
+    &-item {
+      &:hover {
+        background-color: $grey;
+      }
+    }
+  }
+}
+
+.formulate-input-element--customselect {
+  display: flex;
+  border-bottom: $input-border-width solid $input-border-color;
+  @at-root .formulate-input--has-errors & {
+    border-bottom-color: $form-feedback-invalid-color;
+  }
+  input {
+    cursor: pointer;
+    flex: 1;
+    border-bottom: none !important;
+  }
+}
+
+.formulate-input-element--customselect__reset {
+  margin-right: .3rem;
+  transform: scale(0.8);
+  @at-root .formulate-input--light-bg & {
+    svg,path {
+      fill: $black;
+    }
+  }
+}
+
+.formulate-input-element--customselect__arrow {
+  svg {
+    transform: scaleY(1);
+  }
+  &--open {
+    svg {
+      transform: scaleY(-1);
+    }
+  }
+  @at-root .formulate-input--light-bg & {
+    svg,path {
+      fill: $black;
+    }
+  }
+  @at-root .formulate-input--has-errors & {
+    svg,path {
+      fill: $form-feedback-invalid-color;
+    }
+  }
+}
+
+.formulate-input--customselect__dropdown {
+  @include reset-ul();
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.formulate-input--customselect__dropdown-item {
+  padding: $input-custom-select-padding-y $input-custom-select-padding-x;
+  font-size: $input-custom-select-item-font-size;
+  cursor: pointer;
+  transition: background-color #{$transition-fast};
+}
+
+/*
+ * Multiple vue formulate elements
+ */
+.vue-formulate-wrap--inline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  > .formulate-input--customselect,
+  > .formulate-input--email {
+    flex: 1;
+    margin-right: 2rem;
+  }
+  input:not(.formulate-input--checkbox):not(.formulate-input--radio) {
+    padding-bottom: 0.7rem;
+  }
+}
+
+.vue-formulate-wrap--icon {
+  > .sk-icon {
+    position: absolute;
+    top: 50%;
+    left: .5rem;
+    transform: translateY(-50%);
+  }
+  .formulate-input-label {
+    padding-left: 2.4rem;
+  }
+  .formulate-input-label--floating-label {
+    top: 0.85rem;
+  }
+  .formulate-input-element input:not([type="checkbox"]):not([type="radio"]) {
+    padding-left: 3rem;
+  }
+}
+/*! purgecss end ignore */

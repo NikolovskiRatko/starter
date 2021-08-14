@@ -1,0 +1,5 @@
+declare interface {{modelName}}TableRow {
+    id?: number;
+    order?: number;
+    name?: string;
+}

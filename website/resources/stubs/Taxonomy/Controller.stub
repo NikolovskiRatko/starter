@@ -1,0 +1,119 @@
+<?php
+
+namespace App\Applications\Common\Controllers;
+
+use App\Applications\Common\BLL\TaxonomiesBLLInterface;
+use App\Applications\Common\Requests\Edit{{modelName}}Request;
+use App\Applications\Common\Requests\New{{modelName}}Request;
+use Exception;
+use App\Http\Controllers\Controller;
+use App\Applications\Common\BLL\{{modelName}}BLLInterface;
+use Illuminate\Http\Request;
+
+/**
+ * @property TaxonomiesBLLInterface $taxonomiesBLL
+ * @property {{modelName}}BLLInterface ${{modelNameSingularLowerCase}}BLL
+ */
+class {{modelName}}Controller extends Controller
+{
+    public function __construct(
+        TaxonomiesBLLInterface $taxonomiesBLL,
+        {{modelName}}BLLInterface ${{modelNameSingularLowerCase}}BLL
+    ){
+        $this->taxonomiesBLL = $taxonomiesBLL;
+        $this->{{modelNameSingularLowerCase}}BLL = ${{modelNameSingularLowerCase}}BLL;
+    }
+
+    /**
+     * Get a JSON with {{modelNamePluralLowerCase}} for Admin Panel
+     *
+     * @return array|Exception
+     */
+    public function get{{modelNamePlural}}Admin(){
+        try{
+            return $this->{{modelNameSingularLowerCase}}BLL->getAll{{modelNamePlural}}();
+        }
+        catch(Exception $e){
+            return $e;
+        }
+    }
+
+    /**
+     * Order {{modelNameSingularLowerCase}}s
+     *
+     * @param  Request  $request
+     * @return array|Exception
+     */
+    public function order{{modelNamePlural}}(Request $request){
+        try{
+            return $this->{{modelNameSingularLowerCase}}BLL->order{{modelNamePlural}}($request);
+        }
+        catch(Exception $e){
+            return $e;
+        }
+    }
+
+    /**
+     * Create a new {{modelNameSingularLowerCase}}
+     *
+     * @param New{{modelName}}Request $request
+     * @return integer|Exception
+     */
+    public function new{{modelName}}(New{{modelName}}Request $request){
+        try{
+            return $this->{{modelNameSingularLowerCase}}BLL->new{{modelName}}($request);
+        }
+        catch(Exception $e){
+            return $e;
+        }
+    }
+
+    /**
+     * Delete a {{modelNameSingularLowerCase}}
+     *
+     * @param integer $id
+     *
+     * @return integer|Exception
+     */
+    public function delete{{modelName}}($id){
+        try{
+            return $this->taxonomiesBLL->deleteTaxonomy('{{modelNameSingularLowerCase}}', $id);
+        }
+        catch(Exception $e){
+            return $e;
+        }
+    }
+
+    /**
+     * Restore a {{modelNameSingularLowerCase}}
+     *
+     * @param integer $id
+     *
+     * @return integer|Exception
+     */
+    public function restore{{modelName}}($id){
+        try{
+            return $this->taxonomiesBLL->restoreTaxonomy('{{modelNameSingularLowerCase}}', $id);
+        }
+        catch(Exception $e){
+            return $e;
+        }
+    }
+
+    /**
+     * Edit a {{modelNameSingularLowerCase}}
+     *
+     * @param Edit{{modelName}}Request $request
+     * @param integer $id
+     *
+     * @return integer|Exception
+     */
+    public function edit{{modelName}}(Edit{{modelName}}Request $request, $id){
+        try{
+            return $this->{{modelNameSingularLowerCase}}BLL->edit{{modelName}}($request, $id);
+        }
+        catch(Exception $e){
+            return $e;
+        }
+    }
+}

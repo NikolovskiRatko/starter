@@ -1,0 +1,32 @@
+/*
+ * Freja rework
+ */
+@import 'front/abstracts/imports';
+@import 'front/base/imports';
+@import 'front/components/imports';
+@import 'front/layout/imports';
+
+/*
+ *  Starter Kit Admin Demo
+ */
+.landing-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1E1E2D;
+  &:before {
+    content: '';
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+  }
+}
+.landing-page__logo {
+  border-radius: 5px;
+}
+

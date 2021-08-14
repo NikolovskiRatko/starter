@@ -1,0 +1,30 @@
+declare interface ProductFormItem {
+  id?: number;
+  name?: string;
+  height?: string;
+  width?: string;
+  length?: string;
+  handle_id?: number | null;
+  lamination_id?: number | null;
+  paper_id?: number | null;
+  bottom?: string;
+  printed_bottom?: string;
+  front_back?: string;
+  spot_uv?: string;
+  hot_foil?: string;
+  hot_foil_cliches?: Array<ClicheFormItem>;
+  embossing?: string;
+  embossing_cliches?: Array<ClicheFormItem>;
+  outside_colors?: Array<Object>;
+  inside_colors?: Array<Object>;
+  quantity?: string;
+  comment?: string;
+  display_name?: string;
+  min_offer?: number;
+  offer?: object;
+  paper?: object;
+  handle?: object;
+  lamination?: object;
+  max_package_weight?: number;
+  shipping_price?: number;
+}

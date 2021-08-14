@@ -1,0 +1,108 @@
+.background-text-holder {
+  font-family: $font-secondary;
+  color: rgba(239,214,193,.3);
+  font-weight: $font-weight-bold;
+  position: absolute;
+  top: -3rem;
+  left: 0rem;
+  font-size: 5rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: 7rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 10rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 12rem;
+  }
+}
+
+blockquote {
+  position: relative;
+  vertical-align: middle;
+  margin: 58px 0 33px;
+  padding: 0;
+  font-family: Cormorant,serif;
+  font-size: 31px;
+  line-height: 35px;
+  font-weight: 500;
+  quotes: none;
+  box-sizing: border-box;
+  &:before {
+    content: "”";
+    position: absolute;
+    -webkit-transform: translateX(-70%);
+    -moz-transform: translateX(-70%);
+    transform: translateX(-70%);
+    top: 95%;
+    letter-spacing: -30px;
+    color: #faf3ed;
+    z-index: 1;
+    left: 50%;
+    font-size: 20rem;
+  }
+  &:after {
+    content: '';
+  }
+  &.centered {
+    text-align: center;
+    p {
+      max-width: 50rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  > * {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    margin: 0;
+  }
+  cite {
+    font-style: normal;
+    font-weight: 400
+  }
+  p {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  blockquote:before {
+    top:50%
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  blockquote:before {
+    top:35%;
+    -webkit-transform: translateX(-55%);
+    -moz-transform: translateX(-55%);
+    transform: translateX(-55%)
+  }
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  max-width: 60%
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 32px
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote cite {
+  text-transform: none;
+  font-style: normal
+}
