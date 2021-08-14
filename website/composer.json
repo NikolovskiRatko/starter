@@ -11,25 +11,6 @@
     "pug",
     "jest"
   ],
-  "authors": [
-    {
-      "name": "ratko nikolovski",
-      "email": "nikolovski.ratko@gmail.com",
-      "homepage": "https://nikolovski.org"
-    },
-    {
-      "name": "the laravel framework",
-      "homepage": "https://laravel.com"
-    },
-    {
-      "name": "the vue framework",
-      "homepage": "https://vuejs.org/"
-    },
-    {
-      "name": "bootstrap",
-      "homepage": "https://getbootstrap.com/"
-    }
-  ],
   "license": "MIT",
   "type": "project",
   "require": {
