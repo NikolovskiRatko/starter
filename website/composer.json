@@ -13,20 +13,20 @@
   ],
   "authors": [
     {
-      "name": "Ratko Nikolovski",
+      "name": "ratko nikolovski",
       "email": "nikolovski.ratko@gmail.com",
       "homepage": "https://nikolovski.org"
     },
     {
-      "name": "The Laravel Framework",
+      "name": "the laravel framework",
       "homepage": "https://laravel.com"
     },
     {
-      "name": "The Vue Framework",
+      "name": "the vue framework",
       "homepage": "https://vuejs.org/"
     },
     {
-      "name": "Bootstrap",
+      "name": "bootstrap",
       "homepage": "https://getbootstrap.com/"
     }
   ],
