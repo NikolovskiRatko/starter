@@ -1,12 +1,11 @@
 ---
 apache_create_vhosts: true
-apache_vhosts_filename: "starter.conf"
+apache_vhosts_filename: "esofstarter.com.conf"
 apache_vhosts_template: "vhosts.conf.j2"
 apache_vhosts:
-  # TODO: switch to an actual domain
-  - servername: "kromid.com"
-    serveralias: "www.kromid.com"
-    documentroot: "/var/www/html/starter/website/public"
+  - servername: "esofstarter.com"
+    serveralias: "www.esofstarter.com"
+    documentroot: "/var/www/html/esofstarter.com/website/public"
 
 apache_allow_override: "All"
 apache_options: "-Indexes +FollowSymLinks"
