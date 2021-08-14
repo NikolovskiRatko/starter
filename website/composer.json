@@ -1,5 +1,5 @@
 {
-  "name": "starter",
+  "name": "esof/starter",
   "description": "A Single Page Application boilerplate using  Laravel 5.7, Vue.js 2.5, Bootstrap 4, TypeScript and Sass",
   "keywords": [
     "laravel",
