@@ -16,11 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(PermissionTableSeeder::class);
 
-        $this->call(ServicesTableSeeder::class);
-        $this->call(ChildServicesTableSeeder::class);
-        $this->call(AppointmentsTableSeeder::class);
-        $this->call(AvailableHoursTableSeeder::class);
-
         //Migration of data from legacy system
 //        $this->call(DataMigrationSeeder::class);
     }
