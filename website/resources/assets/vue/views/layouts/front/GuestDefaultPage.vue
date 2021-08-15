@@ -1,8 +1,6 @@
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
 import {namespace} from "vuex-class";
-// import GuestHeader from '@/views/layouts/front/GuestHeader.vue';
-// import GuestFooter from '@/views/layouts/front/GuestFooter.vue';
 import VueHeadful from "vue-headful";
 import {seoDefaults} from '@/utils/seoDefaults.ts';
 import {throttle} from "lodash";
@@ -33,8 +31,6 @@ Vue.use(VueScrollTo, {
 
 @Component({
              components: {
-               // GuestHeader,
-               // GuestFooter,
                VueHeadful,
                Header,
                StarterFooter,
@@ -97,13 +93,8 @@ export default class GuestDefaultPage extends Vue {
 
 <template>
   <div>
-    <div id="countown_page">
-      <!-- 2018-03-02 23:59:00 -->
-      <!-- "Y-m-d H:i:s" -->
-      <Countdown date="2021-08-10 12:15:11"></Countdown>
-    </div>
-    <!--    <Header/>-->
-    <!--    <router-view></router-view>-->
-    <!--    <StarterFooter/>-->
+        <Header/>
+        <router-view></router-view>
+        <StarterFooter/>
   </div>
 </template>

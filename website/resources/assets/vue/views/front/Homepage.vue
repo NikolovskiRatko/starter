@@ -31,7 +31,10 @@ export default class Homepage extends BasePage {
 <template>
   <div>
     <div class="page-header">
-      <h1 class="page-header__main-title" style="font-size: 0.625rem">      <a href="/"><img src="https://fontmeme.com/permalink/210614/d357fad6a11a3d710c3a0fc60c47e9f8.png" alt="STARTER" border="0"></a>
+      <h1 class="page-header__main-title" style="font-size: 0.625rem">
+        <a href="/">
+          <img src="https://fontmeme.com/permalink/210614/d357fad6a11a3d710c3a0fc60c47e9f8.png" alt="STARTER" border="0">
+        </a>
       </h1>
     </div>
     <page-part></page-part>
