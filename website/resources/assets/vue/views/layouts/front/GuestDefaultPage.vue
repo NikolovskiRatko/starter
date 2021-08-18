@@ -12,6 +12,8 @@ import * as VueScrollTo from "vue-scrollto";
 import Header from "@/components/Starter/StarterHeader/Header.vue";
 import StarterFooter from "@/components/Starter/StarterFooter/StarterFooter.vue";
 import Countdown from '@/views/front/Countdown.vue';
+import Team from "@/components/Starter/Pages/Team.vue";
+import MainHeader from "@/components/Starter/Pages/MainHeader.vue";
 
 const {State} = namespace("Root");
 
@@ -30,13 +32,13 @@ Vue.use(VueScrollTo, {
 });
 
 @Component({
-             components: {
-               VueHeadful,
-               Header,
-               StarterFooter,
-               Countdown
-             },
-           })
+  components: {
+    VueHeadful,
+    Header,
+    StarterFooter,
+    Countdown,
+  },
+})
 export default class GuestDefaultPage extends Vue {
   @State("bodyClasses") bodyClasses;
 
@@ -83,18 +85,22 @@ export default class GuestDefaultPage extends Vue {
 
   scrollToTop() {
     window.scrollTo({
-                      top: 0,
-                      left: 0,
-                      behavior: "smooth",
-                    });
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   }
 }
 </script>
 
 <template>
-  <div>
-        <Header/>
-        <router-view></router-view>
-        <StarterFooter/>
+  <div class="guest-default-template">
+    <Header/>
+    <router-view></router-view>
+
+    <StarterFooter/>
   </div>
 </template>
+
+<style>
+</style>

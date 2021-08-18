@@ -2,7 +2,7 @@ version: "3"
 
 services:
   webserver:
-    build: 
+    build:
       context: ./bin/${PHPVERSION}
     container_name: '${COMPOSE_PROJECT_NAME}-${PHPVERSION}'
     restart: 'always'
@@ -15,7 +15,7 @@ services:
       main:
         aliases:
           - starter.test
-    volumes: 
+    volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
@@ -25,20 +25,20 @@ services:
       PMA_PORT: ${HOST_MACHINE_PMA_PORT}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   node:
-    build: 
+    build:
       context: ./bin/node
     container_name: '${COMPOSE_PROJECT_NAME}-node'
     restart: 'always'
-    command: yarn watch
+    command: bash -c "yarn install --ignore-engines && yarn watch"
     ports:
       - "3030:3030"
     networks:
       - main
-    volumes: 
-      - /home/tevidma/development/repositories/starter/website:/usr/app
+    volumes:
+      - ${NODE_ROOT-./www}:/usr/app
     working_dir: /usr/app
     environment:
-      HOST: 0.0.0.0    
+      HOST: 0.0.0.0
   database:
     build:
       context: "./bin/${DATABASE}"
@@ -48,7 +48,7 @@ services:
       - "127.0.0.1:${HOST_MACHINE_MYSQL_PORT}:3306"
     networks:
       - main
-    volumes: 
+    volumes:
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
@@ -56,24 +56,35 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_TCP_PORT: 3306
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: '${COMPOSE_PROJECT_NAME}-phpmyadmin'
-    links:
-      - database
-    environment:
-      PMA_HOST: database
-      PMA_PORT: 3306
-      PMA_USER: root
-      PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    restart: always
     ports:
       - '${HOST_MACHINE_PMA_PORT}:80'
-    volumes: 
-      - /sessions
-      - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
+    networks:
+      - main
+    environment:
+      PMA_HOST: database
+      PMA_USER: root
+      PMA_PASSWORD: tiger
+
+    # links:
+    #   - database
+    # environment:
+    #   PMA_HOST: database
+    #   PMA_PORT: 3306
+    #   PMA_USER: root
+    #   PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    #   MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    #   MYSQL_USER: ${MYSQL_USER}
+    #   MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    # ports:
+    #   - '${HOST_MACHINE_PMA_PORT}:80'
+    # volumes:
+    #   - /sessions
+    #   - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
   redis:
     container_name: '${COMPOSE_PROJECT_NAME}-redis'
     image: redis:latest
@@ -81,9 +92,9 @@ services:
       - "6379"
     ports:
       - "${HOST_MACHINE_REDIS_PORT}:6379"
-    networks: 
+    networks:
       - main
-    # ports:
+      # ports:
       # - "127.0.0.1:${HOST_MACHINE_REDIS_PORT}:6379"
 networks:
   main:
