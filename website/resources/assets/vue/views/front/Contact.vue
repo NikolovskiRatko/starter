@@ -140,10 +140,10 @@ export default class Contact extends Vue {
                 @keydown="form.errors.clear($event.target.name)">
 
             <div class="form-row">
-              <div :class="['form-group','col-lg-6',{'has-error':form.errors.errors.name}]">
+              <div :class="['nes-input' ,'form-group','col-lg-6',{'has-error':form.errors.errors.name}]">
                 <input type="text"
                        v-model="form.name"
-                       :class="['form-control',{'is-invalid':form.errors.errors.name}]"
+                       :class="['form-control',{'is-invalid':form.errors.errors.name}, 'input', 'is-warning']"
                        name="name"
                        placeholder="Full name">
                 <span v-if="form.errors.errors.name" class="help-block">{{ $t(form.errors.errors.name) }}</span>

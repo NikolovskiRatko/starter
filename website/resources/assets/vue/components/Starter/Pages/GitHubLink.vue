@@ -12,12 +12,14 @@ export default class GitHubLink extends Vue {
 
 <template>
   <div id="dino">
-    <div class="fork__me">
-      <div class="nes-balloon from-right">
-        <p>Fork Me On GitHub</p>
+    <a href="https://github.com/NikolovskiRatko/starter" target="_blank">
+      <div class="fork__me">
+        <div class="nes-balloon from-right">
+          <p>Fork Me On GitHub</p>
+        </div>
+        <i class="nes-gjuro animate"></i>
       </div>
-      <i class="nes-gjuro animate"></i>
-    </div>
+    </a>
   </div>
 </template>
 

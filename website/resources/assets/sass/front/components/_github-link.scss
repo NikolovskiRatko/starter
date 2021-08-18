@@ -1,31 +1,24 @@
 .fork__me {
-  //width: 40%;
-  //position: fixed;
-  //display: flex;
-  //align-items: flex-start;
-  //justify-content: flex-end;
   z-index: 999999999999;
-  //align-self: flex-start;
-  padding: 0.2rem 0.8rem;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 2rem;
   font-size: 0.8rem;
   color: #333;
-  //left: 0;
-  //transition: all 0.3s ease;
   @media (max-width: 480px) {
     display: none;
   }
-}
-
-.nes-octocat {
-  height: 0 !important;
 }
 
 #dino {
   display: flex;
   justify-content: flex-end;
   position: sticky;
-  top: 155px;
-  right: 0;
+  z-index: 555;
+
+  @media (max-width: 768px) {
+    position: sticky;
+  }
 }
 
 .nes-gjuro {
@@ -49,10 +42,7 @@
       (0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1),
       (0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1),
       (0,1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,1,1,1,1),
-      (0,0,1,1,1,0,1,1,1,0,1,1,1,1,0,0,0,0,0,),
-      (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,),
-      (0,0,0,0,0,0,0,0,0,0,0,0,0,0),
-      (0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+      (0,0,1,1,1,0,1,1,1,0,1,1,1,1,0,0,0,0,0,)
   );
   // prettier-ignore
   $octocat-2: (
@@ -72,14 +62,10 @@
       (0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0),
       (0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0),
       (0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0),
-      (0,1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,1,1,1,1,0,0),
-      (0,0,1,1,1,0,1,1,1,0,1,1,1,1,0,0,0,0,0,),
-      (0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,),
-      (0,0,0,0,0,0,0,0,0,0,0,0,0,0),
-      (0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+      (0,1,1,0,0,0,1,0,0,0,1,0,0,0,1,1,1,1,1,1,0,0),
+      (0,0,0,1,1,1,0,1,1,1,0,1,1,1,1,0,0,0,0,)
   );
   $size: 6px;
-
   position: relative;
   display: inline-block;
   width: $size * length(nth($octocat-1, 1));

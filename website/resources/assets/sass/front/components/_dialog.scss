@@ -1,0 +1,18 @@
+
+.dialog__box {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 5% 0;
+}
+
+.dialog__box > div > section {
+  @media (min-width: 375px) {}
+  padding: 0 0 2% 0;
+}
+
+.dialog__box > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}

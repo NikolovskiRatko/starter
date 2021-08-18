@@ -23,9 +23,11 @@
 }
 
 .main__header__text {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 3rem 0;
+  padding: 3rem 2rem 2rem 2rem;
+  margin: -9rem auto 0 auto;
+  @media (max-width: 830px) {
+  margin: 0;
+  }
 }
 
 #header__text{
@@ -36,13 +38,16 @@
   @media (max-width: 480px) {
     //font-size: 15px;
     text-align: center;
+    font-size: 2.5rem;
+    padding-bottom: 1.5rem;
   }
 }
 
 .main__header__text > h3 {
   @media (max-width: 480px) {
-    font-size: 35px;
+    font-size: 1.5rem;
     text-align: center;
+    padding: 0 0 1rem 0;
   }
 }
 
@@ -97,9 +102,9 @@
   $size: 6px;
 
   position: relative;
-  display: inline-block;
-  width: $size * length(nth($octocat-1, 1));
-  height: $size * length($octocat-1);
+  //display: inline-block;
+  //width: $size * length(nth($octocat-1, 1));
+  //height: 0 !important;
 
   &::before {
     position: absolute;
