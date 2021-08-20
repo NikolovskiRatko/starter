@@ -9,13 +9,13 @@ import 'hooper/dist/hooper.css';
 //Starter Comp
 
 @Component({
-             components: {
-               Hooper,
-               Slide,
-               HooperNavigation,
-               HooperPagination,
-             },
-           })
+  components: {
+    Hooper,
+    Slide,
+    HooperNavigation,
+    HooperPagination,
+  },
+})
 export default class About extends BasePage {
   loaded: boolean;
   hooperSettings: object;
@@ -54,11 +54,11 @@ export default class About extends BasePage {
 
 <template>
   <div class="about-us-page">
-    <div class="page-header">
-      <h1 class="page-header__main-title" style="font-size: 0.625rem"><a href="/"><img
-        src="https://fontmeme.com/permalink/210614/741cf277dcdbb7fff307a9de0bb0ec28.png" alt="ABOUT US" border="0"></a>
-      </h1>
-    </div>
+    <!--    <div class="page-header">-->
+    <!--      <h1 class="page-header__main-title" style="font-size: 0.625rem"><a href="/"><img-->
+    <!--        src="https://fontmeme.com/permalink/210614/741cf277dcdbb7fff307a9de0bb0ec28.png" alt="ABOUT US" border="0"></a>-->
+    <!--      </h1>-->
+    <!--    </div>-->
     <div class="col-md-8 offset-2">
       <h4>At Starter, we believe there is a possible way out of every impossible situation. We're a group of developers
         and creative people dedicated to pushing the limits of what's possible by helping brands in achieving their
@@ -66,28 +66,25 @@ export default class About extends BasePage {
         benefits.
       </h4>
     </div>
-    <div class="main__container">
-      <img src="https://www.x-cart.com/wp-content/uploads/2017/09/how-to-become-a-web-developer.png" alt="image"/>
-    </div>
     <div class="tech__container col-md-8 offset-2">
-        <h2>Technologies We Use</h2>
+      <h2>Technologies We Use</h2>
 
       <div class="tech__container__image">
         <div class="tech__image">
-          <img src="images/Starter/VueLogo.png" alt="vue" />
+          <img src="images/Starter/VueLogo.png" alt="Cue"/>
         </div>
         <div class="tech__image">
-          <img src="images/Starter/LaravelLogo.png" alt="vue" />
+          <img src="images/Starter/LaravelLogo.png" alt="Laravel"/>
         </div>
         <div class="tech__image">
-          <img src="images/Starter/NuxtLogo.png" alt="vue" />
+          <img src="images/Starter/NuxtLogo.png" alt="Nuxt"/>
         </div>
         <div class="tech__image">
-          <img src="images/Starter/SassLogo.png" alt="vue" />
+          <img src="images/Starter/SassLogo.png" alt="Sass"/>
         </div>
       </div>
       <div class="tech__image__long">
-        <img src="images/Starter/IonicLogo.png" alt="vue" />
+        <img src="images/Starter/IonicLogo.png" alt="Ionic"/>
       </div>
     </div>
   </div>

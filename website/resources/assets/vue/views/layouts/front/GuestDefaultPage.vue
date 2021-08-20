@@ -97,8 +97,7 @@ export default class GuestDefaultPage extends Vue {
   <div class="guest-default-template">
     <Header/>
     <router-view></router-view>
-
-    <StarterFooter/>
+<!--    <StarterFooter/>-->
   </div>
 </template>
 

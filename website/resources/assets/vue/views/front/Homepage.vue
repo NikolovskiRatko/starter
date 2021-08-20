@@ -9,7 +9,6 @@ declare const baseMetaUrl;
 //Starter Components
 // import PagePart from "@/components/Starter/Pages/PagePart.vue";
 // import BuildPart from "@/components/Starter/Pages/BuildPart.vue";
-import MainHeader from "@/components/Starter/Pages/MainHeader.vue";
 import Team from "@/components/Starter/Pages/Team.vue";
 import Dialog from "@/components/Starter/Pages/Dialog.vue";
 
@@ -17,7 +16,7 @@ import Dialog from "@/components/Starter/Pages/Dialog.vue";
   components: {
     // PagePart,
     // BuildPart,
-    MainHeader,
+    // MainHeader,
     Team,
     Dialog
   }

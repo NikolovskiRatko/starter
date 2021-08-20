@@ -91,8 +91,27 @@ $colors-list: (primary $color-primary $color-primary-inverse) (secondary $color-
 $states: (primary $color-primary $color-primary-inverse) (success $color-success $color-success-inverse) (warning $color-warning $color-warning-inverse) (danger $color-danger $color-danger-inverse) (info $color-info $color-info-inverse) (dark $color-dark $color-dark-inverse);
 
 
+//STARTER COLORS
+//TEMPLATE ONE
+//https://colorhunt.co/palette/f4f9f9ccf2f4a4ebf3aaaaaa
+$template1-color-primary: #F4F9F9;
+$template1-color-secondary: #CCF2F4;
+$template1-color-tertiary: #A4EBF3;
+$template1-color-four: #AAAAAA;
 
+//TEMPLATE TWO
+//https://colorhunt.co/palette/d8e3e751c4d3126e82132c33
+$template2-color-primary: #D8E3E7;
+$template2-color-secondary: #51C4D3;
+$template2-color-tertiary: #126E82;
+$template2-color-four: #132C33;
 
+//TEMPLATE TWO
+//https://colorhunt.co/palette/d8e3e751c4d3126e82132c33
+$template2-color-primary: #F4F9F9;
+$template2-color-secondary: #CCF2F4;
+$template2-color-tertiary: #A4EBF3;
+$template2-color-four: #AAAAAA;
 
 // dark version
 $dark-bg: $color-dark;

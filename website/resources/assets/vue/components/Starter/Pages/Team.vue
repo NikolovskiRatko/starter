@@ -23,7 +23,7 @@ export default class Team extends Vue {
         <div class="team__box">
           <h5 class="team__box__name">Ljubica Gjorgievska</h5>
           <img src="images/Starter/PixelArts/Ljubica.png"/>
-          <h6 class="team__box__position">CEO</h6>
+          <h6 class="team__box__position">COO</h6>
         </div>
         <div class="team__box">
           <h5 class="team__box__name">Stefan Ugrenovikj</h5>
