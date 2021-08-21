@@ -1,8 +1,13 @@
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
-import Technologies
+// import Technologies
+import TechWeUse from "@/components/Starter/Pages/TechWeUse.vue";
 
-@Component({})
+@Component({
+  components: {
+    TechWeUse,
+  }
+})
 
 export default class Tech extends Vue {
   constructor() {
@@ -12,8 +17,8 @@ export default class Tech extends Vue {
 </script>
 
 <template>
-  <div>
-
+  <div class="tech-page">
+    <tech-we-use/>
   </div>
 </template>
 

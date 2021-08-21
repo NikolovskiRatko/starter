@@ -3,6 +3,7 @@ import BasePage from "@/views/front/BasePage.vue";
 import {Component, Vue} from 'vue-property-decorator';
 import EventBus from '@/utils/event-bus';
 import {State} from "vuex-class";
+import Team from '@/components/Starter/Pages/Team.vue';
 import {Hooper, Slide, Navigation as HooperNavigation, Pagination as HooperPagination} from 'hooper';
 import 'hooper/dist/hooper.css';
 
@@ -14,6 +15,7 @@ import 'hooper/dist/hooper.css';
     Slide,
     HooperNavigation,
     HooperPagination,
+    Team,
   },
 })
 export default class About extends BasePage {
@@ -59,33 +61,82 @@ export default class About extends BasePage {
     <!--        src="https://fontmeme.com/permalink/210614/741cf277dcdbb7fff307a9de0bb0ec28.png" alt="ABOUT US" border="0"></a>-->
     <!--      </h1>-->
     <!--    </div>-->
-    <div class="col-md-8 offset-2">
-      <h4>At Starter, we believe there is a possible way out of every impossible situation. We're a group of developers
+<!--    <div class="col-md-6">-->
+<!--      <form class="contact-us-page__form" @submit.prevent="onSubmit"-->
+<!--            @keydown="form.errors.clear($event.target.name)">-->
+
+<!--        <div class="form-row">-->
+<!--          <div :class="['nes-input' ,'form-group','col-lg-6',{'has-error':form.errors.errors.name}]">-->
+<!--            <input type="text"-->
+<!--                   v-model="form.name"-->
+<!--                   :class="['form-control',{'is-invalid':form.errors.errors.name}, 'input', 'is-warning']"-->
+<!--                   name="name"-->
+<!--                   placeholder="Full name">-->
+<!--            <span v-if="form.errors.errors.name" class="help-block">{{ $t(form.errors.errors.name) }}</span>-->
+<!--          </div>-->
+<!--          <div :class="['form-group','col-lg-6',{'has-error':form.errors.errors.email}]">-->
+<!--            <input type="email"-->
+<!--                   v-model="form.email"-->
+<!--                   :class="['form-control',{'is-invalid':form.errors.errors.email}]"-->
+<!--                   name="email"-->
+<!--                   placeholder="Email">-->
+<!--            <span v-if="form.errors.errors.email" class="help-block">{{ $t(form.errors.errors.email) }}</span>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="form-row">-->
+<!--          <div :class="['form-group','col',{'has-error':form.errors.errors.subject}]">-->
+<!--            <input type="text"-->
+<!--                   v-model="form.subject"-->
+<!--                   :class="['form-control',{'is-invalid':form.errors.errors.subject}]"-->
+<!--                   name="name"-->
+<!--                   placeholder="Subject">-->
+<!--            <span v-if="form.errors.errors.subject" class="help-block">{{ $t(form.errors.errors.subject) }}</span>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="form-row">-->
+<!--          <div :class="['form-group','col',{'has-error':form.errors.errors.name}]">-->
+<!--                <textarea v-model="form.message"-->
+<!--                          rows="8"-->
+<!--                          :class="['form-control',{'is-invalid':form.errors.errors.message}]"-->
+<!--                          name="message"-->
+<!--                          placeholder="Message"></textarea>-->
+<!--            <span v-if="form.errors.errors.message" class="help-block">{{ $t(form.errors.errors.message) }}</span>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div v-if="!loading" class="form-row">-->
+<!--          <div class="contact-form-success alert alert-success" v-if="form.successful">-->
+<!--            <strong>Success!</strong> Your message has been sent to us.-->
+<!--          </div>-->
+
+<!--          <div class="contact-form-error alert alert-danger" v-if="messageFailed">-->
+<!--            <strong>Error!</strong> There was an error sending your message.-->
+<!--            <span class="mail-error-message text-1"></span>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="form-row submit-cont">-->
+<!--          <div class="form-submit__wrap">-->
+<!--            <input type="submit"-->
+<!--                   class="form-submit__input"-->
+<!--                   :value="loading ? $t('strings.loading') : $t('pages.contact.form_labels.send_message')">-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <css-loader v-if="loading"></css-loader>-->
+
+<!--      </form>-->
+<!--    </div>-->
+    <Team/>
+    <div class="col-md-8 about__text">
+      <h4>At Starter, we believe there is a possible way out of every impossible situation. We're a group of
+        developers
         and creative people dedicated to pushing the limits of what's possible by helping brands in achieving their
         goals.Our experience working with global brands allows us to fuel creative innovation that produces concrete
         benefits.
       </h4>
-    </div>
-    <div class="tech__container col-md-8 offset-2">
-      <h2>Technologies We Use</h2>
-
-      <div class="tech__container__image">
-        <div class="tech__image">
-          <img src="images/Starter/VueLogo.png" alt="Cue"/>
-        </div>
-        <div class="tech__image">
-          <img src="images/Starter/LaravelLogo.png" alt="Laravel"/>
-        </div>
-        <div class="tech__image">
-          <img src="images/Starter/NuxtLogo.png" alt="Nuxt"/>
-        </div>
-        <div class="tech__image">
-          <img src="images/Starter/SassLogo.png" alt="Sass"/>
-        </div>
-      </div>
-      <div class="tech__image__long">
-        <img src="images/Starter/IonicLogo.png" alt="Ionic"/>
-      </div>
     </div>
   </div>
 </template>

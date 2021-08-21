@@ -12,8 +12,8 @@ export default class Team extends Vue {
 
 <template>
   <div class="nes-container with-title" id="buks">
-    <h3 style="text-align: center; font-size: 41px" class="title"><span style="color: #219cee">#</span>Meet Our Team :)</h3>
-    <div class="col-lg-8 team">
+    <h3 style="text-align: center; font-size: 28px" class="title"><span style="color: #219cee">#</span>Meet Our Team :)</h3>
+    <div class="col-lg-10 team">
       <div class="team">
         <div class="team__box">
           <h5 class="team__box__name">Ratko Nikolovski</h5>

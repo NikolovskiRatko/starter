@@ -9,21 +9,13 @@ export default class Header extends Vue {
    constructor() {
     super();
   }
-
-  data () {
-    return {
-      showNavbar: true,
-      lastScrollPosition: 0
-    }
-  }
-
-
 }
+
 </script>
 
 <template>
   <div class="main-header-container">
-    <div class="starter__header main-header navbar " :class="{ sticky: scrollPos > 50 }">
+    <div class="starter__header main-header navbar ">
       <div class="starter__header__left">
         <router-link to="/"><h2>>_</h2></router-link>
         <h4>Starter v.0.1</h4>
@@ -32,7 +24,7 @@ export default class Header extends Vue {
         <router-link class="header__link nes-btn" to="/about">About</router-link>
         <router-link class="header__link nes-btn" to="/tech">Tech</router-link>
 <!--        <router-link class="header__link nes-btn" to="/work">Work</router-link>-->
-        <router-link class="header__link nes-btn" to="/Value">Value</router-link>
+        <router-link class="header__link nes-btn" to="/value">Value</router-link>
       </div>
     </div>
   </div>

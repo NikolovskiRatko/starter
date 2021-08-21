@@ -1,5 +1,7 @@
 <script lang="ts">
+import {Component, Vue} from 'vue-property-decorator';
 
+@Component({})
 
 export default class Value extends Vue{
   constructor() {
@@ -9,6 +11,8 @@ export default class Value extends Vue{
 </script>
 
 <template>
-
+  <div>
+    <h1>Valkueeeee</h1>
+  </div>
 </template>
 
