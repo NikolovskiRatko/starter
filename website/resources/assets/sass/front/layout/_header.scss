@@ -20,7 +20,8 @@
 
 .starter__header__right {
   @media (max-width: 480px) {
-    display: none;
+    //display: none;
+    text-align: center;
   }
 }
 .main-header__container {

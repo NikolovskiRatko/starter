@@ -1,0 +1,41 @@
+.starterArch {
+  //margin-left: auto;
+  //margin-right: auto;
+  margin: 5% auto 0 auto;
+}
+
+.starterArch__header > h2 {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 480px) {
+    font-size: 1.7rem;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+}
+
+.starterArch__box {
+  padding: 2.5rem 0;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+.starterArch__box__mobile {
+  @media (min-width: 480px) {
+    display: none;
+  }
+}
+
+.starterArch__box__mobile > section {
+text-align: center;
+  padding: 2rem 0 0 0;
+}
+
+//PopUps
+.dialog-menu {
+ padding: 0;
+}

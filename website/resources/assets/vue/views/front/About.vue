@@ -6,7 +6,7 @@ import {State} from "vuex-class";
 import Team from '@/components/Starter/Pages/Team.vue';
 import {Hooper, Slide, Navigation as HooperNavigation, Pagination as HooperPagination} from 'hooper';
 import 'hooper/dist/hooper.css';
-
+import ContactForn from '@/components/Starter/Pages/ContactForn.vue';
 //Starter Comp
 
 @Component({
@@ -16,6 +16,7 @@ import 'hooper/dist/hooper.css';
     HooperNavigation,
     HooperPagination,
     Team,
+    ContactForn,
   },
 })
 export default class About extends BasePage {
@@ -55,7 +56,7 @@ export default class About extends BasePage {
 </script>
 
 <template>
-  <div class="about-us-page">
+  <div class="about-us-page col-md-6">
     <!--    <div class="page-header">-->
     <!--      <h1 class="page-header__main-title" style="font-size: 0.625rem"><a href="/"><img-->
     <!--        src="https://fontmeme.com/permalink/210614/741cf277dcdbb7fff307a9de0bb0ec28.png" alt="ABOUT US" border="0"></a>-->
@@ -129,8 +130,10 @@ export default class About extends BasePage {
 
 <!--      </form>-->
 <!--    </div>-->
+    <ContactForn/>
+
     <Team/>
-    <div class="col-md-8 about__text">
+    <div class="about__text">
       <h4>At Starter, we believe there is a possible way out of every impossible situation. We're a group of
         developers
         and creative people dedicated to pushing the limits of what's possible by helping brands in achieving their

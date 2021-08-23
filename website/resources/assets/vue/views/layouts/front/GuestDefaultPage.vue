@@ -4,8 +4,8 @@ import {namespace} from "vuex-class";
 import VueHeadful from "vue-headful";
 import {seoDefaults} from '@/utils/seoDefaults.ts';
 import {throttle} from "lodash";
-import EventBus from '@/utils/event-bus';
-import {NesInputText, NesOctocat} from "vuenes.css";
+// import EventBus from '@/utils/event-bus';
+// import {NesInputText, NesOctocat} from "vuenes.css";
 import * as VueScrollTo from "vue-scrollto";
 
 //Starter Components

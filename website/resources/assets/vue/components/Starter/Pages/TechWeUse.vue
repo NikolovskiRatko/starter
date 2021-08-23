@@ -1,7 +1,11 @@
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-
-@Component({})
+import GitHubLink from "@/components/Starter/Pages/GitHubLink.vue";
+@Component({
+  components: {
+    GitHubLink,
+  }
+})
 
 export default class TechWeUse extends Vue{
   constructor() {
@@ -11,9 +15,9 @@ export default class TechWeUse extends Vue{
 </script>
 
 <template>
-  <div class="tech__container col-md-8 offset-2">
+  <div class="tech__container col-md-8">
     <h2>Technologies We Use</h2>
-
+    <git-hub-link/>
     <div class="tech__container__image">
       <div class="tech__image">
         <img src="images/Starter/VueLogo.png" alt="Cue"/>

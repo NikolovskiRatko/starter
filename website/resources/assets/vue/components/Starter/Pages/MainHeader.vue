@@ -1,10 +1,10 @@
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
-// import GitHubLink from "@/components/Starter/Pages/GitHubLink.vue";
+import GitHubLink from "@/components/Starter/Pages/GitHubLink.vue";
 
 @Component({
   components: {
-    // GitHubLink,
+    GitHubLink,
   }
 })
 

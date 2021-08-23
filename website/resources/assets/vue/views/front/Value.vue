@@ -1,7 +1,11 @@
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-
-@Component({})
+import StarterArch from "@/components/Starter/Pages/StarterArch.vue";
+@Component({
+  components: {
+    StarterArch,
+  }
+})
 
 export default class Value extends Vue{
   constructor() {
@@ -12,7 +16,7 @@ export default class Value extends Vue{
 
 <template>
   <div>
-    <h1>Valkueeeee</h1>
+    <StarterArch/>
   </div>
 </template>
 

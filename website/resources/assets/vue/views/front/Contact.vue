@@ -6,12 +6,12 @@ import {gmapApi} from 'vue2-google-maps';
 import {FormMixin} from "@/mixins/FormMixin";
 import {retroMap, simpleOrange} from './mapStyles';
 import CssLoader from "@/components/CssLoader.vue";
-import Team from "@/components/Starter/Pages/Team";
+// import Team from "@/components/Starter/Pages/Team";
 
 @Component({
   components: {
     CssLoader,
-    Team
+    // Team
   },
   computed: {
     google: gmapApi
