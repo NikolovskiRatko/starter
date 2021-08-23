@@ -18,6 +18,7 @@ export default class DefaultPage extends Vue{
 <template>
   <div class="defaultPage">
     <main-header/>
+    <img id="defaultPage__logoMobile" src="/images/Starter/LogoSHTATABlack.png" alt="StatahLogo" />
   </div>
 </template>
 

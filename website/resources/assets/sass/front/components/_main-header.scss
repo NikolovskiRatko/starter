@@ -1,5 +1,9 @@
 .main__header__div {
   margin: 6% 0;
+
+  @media screen and (max-width: 480px) {
+    margin: 2% 0;
+  }
 }
 .main__header__image {
   //border: 3px solid black;
