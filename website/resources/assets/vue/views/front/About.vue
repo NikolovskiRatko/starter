@@ -130,7 +130,7 @@ export default class About extends BasePage {
 
 <!--      </form>-->
 <!--    </div>-->
-    <ContactForn/>
+<!--    <ContactForn/>-->
 
     <Team/>
     <div class="about__text">
