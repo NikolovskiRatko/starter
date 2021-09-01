@@ -1,10 +1,5 @@
-#  LAMP stack built with Docker Compose
-
-  
-
-![Landing Page](https://preview.ibb.co/gOTa0y/LAMP_STACK.png)
-
-  
+#  Development Environment
+ 
 
 A basic LAMP stack environment built using Docker Compose. It consists of the following:
 
