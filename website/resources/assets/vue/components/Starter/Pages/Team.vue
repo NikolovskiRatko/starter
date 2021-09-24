@@ -21,19 +21,19 @@ export default class Team extends Vue {
           <h6 class="team__box__position">CTO</h6>
         </div>
         <div class="team__box">
-          <h5 class="team__box__name">Ljubica Gjorgievska</h5>
-          <img src="images/Starter/PixelArts/Ljubica.png"/>
-          <h6 class="team__box__position">COO</h6>
+          <h5 class="team__box__name">Maja Ristevska</h5>
+          <img src="images/Starter/PixelArts/Maja.png"/>
+          <h6 class="team__box__position">HR & PM</h6>
         </div>
         <div class="team__box">
           <h5 class="team__box__name">Stefan Ugrenovikj</h5>
           <img src="images/Starter/PixelArts/Stefan.png"/>
-          <h6 class="team__box__position">Front End Dev</h6>
+          <h6 class="team__box__position">Back End Dev</h6>
         </div>
         <div class="team__box">
           <h5 class="team__box__name">Goran Stefanovski</h5>
           <img src="images/Starter/PixelArts/Goran.svg"/>
-          <h6 class="team__box__position">Back End Dev</h6>
+          <h6 class="team__box__position">Front End Dev</h6>
         </div>
 <!--        <div class="logo__box">-->
 <!--            <img src="images/Starter/LogoSHTATABlack.png"/>-->
