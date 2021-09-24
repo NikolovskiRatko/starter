@@ -1,0 +1,17 @@
+.defaultPage {
+  height: 90vh;
+  display: grid;
+  align-items: center;
+  //justify-content: center;
+  @media screen and (max-width: 480px) {
+    height: 0;
+  }
+}
+
+#defaultPage__logoMobile {
+  margin: auto;
+  width: 5rem;
+  @media screen and (min-width: 480px) {
+    display: none;
+  }
+}

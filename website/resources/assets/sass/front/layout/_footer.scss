@@ -68,6 +68,15 @@
   @include media-breakpoint-up(xl) {
     margin: 3rem 0;
   }
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
+}
+
+.main-footer__social-icons > * {
+  @media (max-width: 480px) {
+    margin: 3px;
+  }
 }
 
 .main-footer__social-icons__item {
@@ -98,6 +107,10 @@
     &:nth-last-of-type(-n+2):not(:nth-child(even)) {
       margin-bottom: 0;
     }
+  }
+
+  @media (max-width: 480px) {
+    margin: 0 3px;
   }
 
   @include media-breakpoint-up(md) {

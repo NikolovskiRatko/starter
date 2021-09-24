@@ -1,0 +1,133 @@
+.main__header__div {
+  margin: 6% 0;
+
+  @media screen and (max-width: 480px) {
+    margin: 2% 0;
+  }
+}
+.main__header__image {
+  //border: 3px solid black;
+  //position: absolute;
+  //width: 40%;
+  //background-color: black;
+  //border-radius: 49%;
+  z-index: 999;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.main__header__image > img {
+  object-fit: fill ;
+  padding: 4rem 0;
+
+}
+
+.main__header__text {
+  padding: 3rem 2rem 2rem 2rem;
+  margin: -9rem auto 0 auto;
+  @media (max-width: 830px) {
+  margin: 0;
+  }
+}
+
+#header__text{
+  padding-bottom: 1rem;
+}
+
+.main__header__text > h2 {
+  @media (max-width: 480px) {
+    //font-size: 15px;
+    text-align: center;
+    font-size: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+.main__header__text > h3 {
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0 0 1rem 0;
+  }
+}
+
+.nes-progress.is-primary {
+  @media (max-width: 480px) {
+    //padding: 2p;
+    width: 95%;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    margin: 0 9px;
+  }
+}
+
+.nes-octocat {
+  $octocat-colors: (#333, #ffdec4, #cb7066);
+  // prettier-ignore
+  $octocat-1: (
+      (0,0,0,1,0,0,0,0,0,0,0,0,1,0),
+      (0,0,0,1,1,0,0,0,0,0,0,1,1,0),
+      (0,0,0,1,1,1,1,1,1,1,1,1,1,0),
+      (0,0,1,1,1,1,1,1,1,1,1,1,1,1),
+      (0,0,1,1,1,1,1,1,1,1,1,1,1,1),
+      (0,0,1,1,1,2,2,2,2,2,2,1,1,1),
+      (0,0,1,1,2,3,2,2,2,2,3,2,1,1),
+      (0,0,1,1,2,3,2,2,2,2,3,2,1,1),
+      (0,0,0,1,1,2,2,3,3,2,2,1,1,0),
+      (1,1,0,0,0,0,1,1,1,1,0,0,0,0),
+      (0,0,1,1,0,1,1,1,1,1,1,0,0,0),
+      (0,0,0,1,1,1,1,1,1,1,1,0,0,0),
+      (0,0,0,0,0,1,0,1,1,0,1,0,0,0),
+      (0,0,0,0,0,1,0,1,1,0,1,0,0,0),
+      (0,0,0,0,1,0,1,0,0,1,0,1,0,0)
+  );
+  // prettier-ignore
+  $octocat-2: (
+      (0,0,0,1,0,0,0,0,0,0,0,0,1,0),
+      (0,0,0,1,1,0,0,0,0,0,0,1,1,0),
+      (0,0,0,1,1,1,1,1,1,1,1,1,1,0),
+      (0,0,1,1,1,1,1,1,1,1,1,1,1,1),
+      (0,0,1,1,1,1,1,1,1,1,1,1,1,1),
+      (0,0,1,1,1,2,2,2,2,2,2,1,1,1),
+      (0,0,1,1,2,2,2,2,2,2,2,2,1,1),
+      (0,1,1,1,2,3,2,2,2,2,3,2,1,1),
+      (0,1,0,1,1,2,2,3,3,2,2,1,1,0),
+      (0,0,1,0,0,0,1,1,1,1,0,0,0,0),
+      (0,0,0,1,0,1,1,1,1,1,1,0,0,0),
+      (0,0,0,1,1,1,1,1,1,1,1,0,0,0),
+      (0,0,0,0,0,1,0,1,1,0,1,0,0,0),
+      (0,0,0,0,0,1,0,1,1,0,1,0,0,0),
+      (0,0,0,0,1,0,1,0,0,1,0,1,0,0)
+  );
+  $size: 6px;
+
+  position: relative;
+  //display: inline-block;
+  //width: $size * length(nth($octocat-1, 1));
+  //height: 0 !important;
+
+  &::before {
+    position: absolute;
+    top: -$size;
+    left: -$size;
+    content: "";
+    background: transparent;
+
+    @include pixelize($size, $octocat-1, $octocat-colors);
+    @include fill-gaps();
+  }
+
+  &.animate::before {
+    animation: wave 0.5s infinite steps(1);
+  }
+
+  @keyframes wave {
+    50% {
+      @include pixelize($size, $octocat-2, $octocat-colors);
+    }
+  }
+}

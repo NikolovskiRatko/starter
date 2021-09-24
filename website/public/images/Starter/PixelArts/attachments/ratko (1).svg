@@ -1,0 +1,10 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 239 256" width="350" height="375">
+	<title>ratko</title>
+	<defs>
+		<image  width="106" height="116" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGoAAAB0CAMAAABaI1dOAAAAAXNSR0IB2cksfwAAAHVQTFRF7u7u3d3d7u7u3d3d3d3dAAAA3d3d7u7u3d3dAAAAAAAAAAAA7u7u3d3dAAAAAAAAREREYmJiJiYmAAAAREREAAAA7u7u3d3d3d3d3d3d9buV/9mzkVcx1513wMDA////X5/YkVcx3d3d//fR3d3dkVcx7u7u6WCmOAAAACd0Uk5TAAA/PxD/QEAwv2CAMG+fwP///3/fzyAgf5//////////wID/YNAQRzFNuwAAAetJREFUeJztmulSwlAMRqHaRUCLoKJY9+X9H9HeMNyvDUnbsRTmdnJ+xWY5oBkKeCcTmamGXB5F0cWOy44d/1bFnsRUptqTpmmSKL4jq6jDVOdUZVfdmPVXVZaqkbmpaiz2t4Trjqobuom0qaQty33P0nGrQdmVg4oRpYe/oFJpqmBVs3XJnSZYasDiydtUeeNzMdUJVfflK0j0IKo2a2EjMEfVo07YyrmoSqTtNlUn1eax5GkIFd1dsopKfEIrT/NsFGu+3FSjUKm3Kmkh62NjljDVEVV4Zzm4ivLoVl+dOli2DjYA2dRUo1HhmpRgFkDXTDUKFRumCuI6NPvZwVTs0ZgqdBVFhad5dlGH+Uw1ChUsKMfEbZ3ma6YKXYVFQ4+0dxJqHZucmCogFcUvDrY7rw6K3hySj2XRQVk22VTBqZBCRCPeHeoaIkF11KHOM1XoKlobqAjK4s0LRXQNJdRBvaYKVvXhyOhLus/Cg0Wjni8HRcyCiNVhNTG08n2gqXqqvt2f7WdwlSelPD4GYw5FsYZUhynJVDguYKpwVKKPTSzqSI8Bvf4ff6YKXfWbOtDDFhKz2Y+sOCnJWlQ7equmVUw1pGrhTmYSbKm2dVj28MRou2rijxOY6pSqrJfKox9K1DpMdS5V1l/1BxraZLPAvdi9AAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<use id="Layer 1" href="#img1" x="69" y="65" />
+</svg>

@@ -1,19 +1,37 @@
+.about-us-page {
+  margin: 5% auto 0 auto;
+}
+
+.about__text {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .main__container > img{
   padding: 3rem 0;
 }
 
 .tech__container {
   display: grid;
+  margin-right: auto;
+  margin-left: auto;
   //align-items: center;
   justify-content: center;
   text-align: center;
   padding: 3rem 0;
 }
 
+.tech__container > h2 {
+  @media (max-width: 425px) {
+    font-size: 1.8rem;
+  }
+}
+
 .tech__container__image {
   padding: 2rem 0;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
