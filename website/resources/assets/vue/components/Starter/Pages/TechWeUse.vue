@@ -16,8 +16,8 @@ export default class TechWeUse extends Vue{
 
 <template>
   <div class="tech__container col-md-8">
-    <h2>Technologies We Use</h2>
     <git-hub-link/>
+    <h2>Technologies We Use</h2>
     <div class="tech__container__image">
       <div class="tech__image">
         <img src="images/Starter/VueLogo.png" alt="Cue"/>
