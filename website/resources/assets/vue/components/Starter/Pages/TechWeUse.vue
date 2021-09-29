@@ -32,9 +32,9 @@ export default class TechWeUse extends Vue{
         <img src="images/Starter/SassLogo.png" alt="Sass"/>
       </div>
     </div>
-    <div class="tech__image__long">
-      <img src="images/Starter/IonicLogo.png" alt="Ionic"/>
-    </div>
+<!--    <div class="tech__image__long">-->
+<!--      <img src="images/Starter/IonicLogo.png" alt="Ionic"/>-->
+<!--    </div>-->
   </div>
 </template>
 
