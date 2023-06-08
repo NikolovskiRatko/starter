@@ -1,10 +1,11 @@
 version: "3"
 
 services:
+  
   webserver:
     build:
       context: ./bin/${PHPVERSION}
-    container_name: '${COMPOSE_PROJECT_NAME}-${PHPVERSION}'
+    container_name: '${COMPOSE_PROJECT_NAME}-app'
     restart: 'always'
     ports:
       - "${HOST_MACHINE_UNSECURE_HOST_PORT}:80"
@@ -16,20 +17,21 @@ services:
         aliases:
           - starter.test
     volumes:
-      - ${DOCUMENT_ROOT-./www}:/var/www/html/starter
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
+      - ${STARTER_ROOT-./www}:/var/www/html/starter
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
     environment:
       APACHE_DOCUMENT_ROOT: ${APACHE_DOCUMENT_ROOT-/var/www/html}
       PMA_PORT: ${HOST_MACHINE_PMA_PORT}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+  
   node:
     build:
       context: ./bin/node
     container_name: '${COMPOSE_PROJECT_NAME}-node'
     restart: 'always'
-    command: bash -c "yarn install --ignore-engines && yarn watch"
+    command: tail -F anything # bash -c "cd /usr/app/${PROJECT_LOCATION} && yarn install --ignore-engines && yarn watch"
     ports:
       - "3030:3030"
     networks:
@@ -39,9 +41,10 @@ services:
     working_dir: /usr/app
     environment:
       HOST: 0.0.0.0
+  
   database:
     build:
-      context: "./bin/${DATABASE}"
+      context: "./bin/mysql"
     container_name: '${COMPOSE_PROJECT_NAME}-database'
     restart: 'always'
     ports:
@@ -57,6 +60,7 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_TCP_PORT: 3306
+  
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: '${COMPOSE_PROJECT_NAME}-phpmyadmin'
